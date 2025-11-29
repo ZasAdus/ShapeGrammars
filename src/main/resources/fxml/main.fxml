@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@/styles/main.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ShapeGrammarController">
+    <top>
+        <HBox prefHeight="60.0" spacing="20.0" style="-fx-background-color: #f0f0f0; -fx-padding: 10;"
+              BorderPane.alignment="CENTER">
+            <Button fx:id="menuButton" mnemonicParsing="false" text="Menu" onAction="#handleMenu"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Shape Grammar Editor">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Text>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="resetButton" mnemonicParsing="false" onAction="#handleReset" text="Reset Canvas"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+            <Pane fx:id="canvasPane" prefHeight="450.0" prefWidth="800.0">
+                <Canvas fx:id="canvas" height="450.0" width="800.0"/>
+                <Label fx:id="notificationLabel" styleClass="notification-label" visible="false"
+                       layoutX="250" layoutY="50" text="Notification"/>
+            </Pane>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <VBox prefHeight="150.0"  styleClass="bottomPane" BorderPane.alignment="CENTER" >
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="120.0">
+                <HBox fx:id="productionsBox" alignment="CENTER" spacing="15.0" style="-fx-padding: 10;">
+                </HBox>
+            </ScrollPane>
+        </VBox>
+    </bottom>
+
+</BorderPane>
